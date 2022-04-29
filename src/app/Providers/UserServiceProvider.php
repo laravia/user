@@ -26,7 +26,7 @@ class UserServiceProvider extends ServiceProvider
 
     public function register()
     {
-        dd('TEST');
+        // dd('TEST');
     }
 
     // public function setMacros()
@@ -38,7 +38,7 @@ class UserServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        dd('TEST');
+        // dd('TEST');
     }
     //     $this->loadViewsFrom(Laravia::path()->get('core') . '/resources/views', 'laravia');
     //     $this->loadTranslationsFrom(Laravia::path()->get('core') . '/resources/lang', 'laravia');
