@@ -41,7 +41,7 @@
     "extra": {
         "laravel": {
             "providers": [
-
+                "Laravia\\User\\App\\Providers\\UserServiceProvider"
             ]
         }
     }
