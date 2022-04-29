@@ -1,0 +1,48 @@
+{
+    "minimum-stability": "dev",
+    "name": "laravia/user",
+    "description": "laravia core",
+    "license": "license",
+    "authors": [
+        {
+            "name": "laravia",
+            "email": "code@laravia.art",
+            "homepage": "https://laravia.art"
+        }
+    ],
+    "homepage": "https://laravia.art",
+    "keywords": [
+        "Laravel",
+        "Laravia",
+        "Package"
+    ],
+    "require": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Laravia\\User\\App\\": "./src/app",
+            "Laravia\\User\\Database\\": "./src/database",
+            "Laravia\\User\\Database\\Seeders\\": "./src/database/seeders"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Laravia\\User\\App\\": "./src/app",
+            "Laravia\\User\\Database\\": "./src/database",
+            "Laravia\\User\\Database\\Seeders\\": "./src/database/seeders",
+            "Laravia\\User\\Tests\\": "./src/tests"
+        }
+    },
+    "scripts": {
+        "post-root-package-update": []
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+
+            ]
+        }
+    }
+}
