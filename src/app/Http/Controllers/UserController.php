@@ -4,6 +4,7 @@ namespace Laravia\User\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Laravia\Core\App\Laravia;
 
 class UserController extends Controller
 {
@@ -11,7 +12,7 @@ class UserController extends Controller
 
     public function loginGet()
     {
-        return view('user::login');
+        return view('laravia.user::login');
     }
 
     public function loginPost(Request $request)
@@ -25,7 +26,7 @@ class UserController extends Controller
             return back()->with('status', 'Invalid login details');
         }
 
-        return redirect()->route('user.dashboard');
+        return redirect()->route('laravia.user::dashboard');
     }
 
     public function logoutPost(Request $request)

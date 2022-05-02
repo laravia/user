@@ -5,7 +5,7 @@
 
         <div class="w-1/2 pl-2 md:pl-0">
             <a class="text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold" href="/">
-                <i class="fas fa-sun text-pink-600 pr-3"></i> {{trans('laravia::common.app_title')}}
+                <i class="fas fa-sun text-pink-600 pr-3"></i> {{trans('laravia::common.appTitle')}}
             </a>
         </div>
         <div class="w-1/2 pr-0">
@@ -30,11 +30,11 @@
                         <ul class="list-reset">
                             <li>
                             @if(!Auth::user())
-                                <a class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline" href="{{route('user.login')}}">
-                                    {{Laravia::translate('btn_login')}}
+                                <a class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline" href="{{route('laravia.user::login')}}">
+                                    {{trans('laravia.user::common.btnLogin')}}
                                 </a>
                             @endif
-                            @if(Auth::user())<form action="{{route('user.logout')}}" method="POST">@csrf<button class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">{{Laravia::translate('btn_logout')}}</button></form>@endif
+                            @if(Auth::user())<form action="{{route('laravia.user::logout')}}" method="POST">@csrf<button class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">{{trans('laravia.user::common.btnLogout')}}</button></form>@endif
                             </li>
 
 

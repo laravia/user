@@ -7,11 +7,11 @@ use App\Http\Controllers\Controller;
 class DashboardController extends Controller
 {
     public function index(){
-        return view('user::dashboardIndex');
+        return view('laravia.user::dashboardIndex');
     }
 
     public function home(){
-        return view('user::dashboardHome');
+        return view('laravia.user::dashboardHome');
     }
 
 }

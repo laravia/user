@@ -104,7 +104,7 @@
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-    @component('user::components.navi')
+    @component('laravia.user::components.navi')
     @endcomponent
 
 
