@@ -1,5 +1,4 @@
 <?php
-
 return  [
     'siteTitleDashboard'=>'dashboard',
     'siteTitleLogin'=>'log in',

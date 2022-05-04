@@ -5,7 +5,7 @@
 
         <div class="w-1/2 pl-2 md:pl-0">
             <a class="text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold" href="/">
-                <i class="fas fa-sun text-pink-600 pr-3"></i> {{trans('laravia::common.appTitle')}}
+                <i class="fas fa-sun text-pink-600 pr-3"></i> {{Laravia::trans('core.appTitle')}}
             </a>
         </div>
         <div class="w-1/2 pr-0">
@@ -31,10 +31,10 @@
                             <li>
                             @if(!Auth::user())
                                 <a class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline" href="{{route('laravia.user::login')}}">
-                                    {{trans('laravia.user::common.btnLogin')}}
+                                    {{Laravia::trans('user.btnLogin')}}
                                 </a>
                             @endif
-                            @if(Auth::user())<form action="{{route('laravia.user::logout')}}" method="POST">@csrf<button class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">{{trans('laravia.user::common.btnLogout')}}</button></form>@endif
+                            @if(Auth::user())<form action="{{route('laravia.user::logout')}}" method="POST">@csrf<button class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">{{Laravia::trans('user.btnLogout')}}</button></form>@endif
                             </li>
 
 
@@ -59,7 +59,31 @@
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white z-20" id="nav-content">
             <ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
 
+                @foreach (Laravia::links() as $navi)
 
+                @if(Auth::user() && data_get($navi,'auth') || Auth::user() && !data_get($navi,'auth') && !data_get($navi,'guest'))
+                    <li class="mr-6 my-2 md:my-0">
+                        <a href="{{route(data_get($navi,'name'))}}" class="block py-1 md:py-3 pl-1 align-middle text-pink-600 no-underline hover:text-gray-900 border-orange-600 hover:border-orange-600">
+                            {{-- <i class="fas fa-home fa-fw mr-3 text-pink-600"></i> --}}
+                            <span class="pb-1 md:pb-0 text-sm">
+                                {{data_get($navi,'text')}}
+                            </span>
+                        </a>
+                    </li>
+                @endif
+
+                @if(!Auth::user() && data_get($navi,'guest'))
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="{{route(data_get($navi,'name'))}}" class="block py-1 md:py-3 pl-1 align-middle text-pink-600 no-underline hover:text-gray-900 border-b-2 border-orange-600 hover:border-orange-600">
+                        <i class="fas fa-home fa-fw mr-3 text-pink-600"></i>
+                        <span class="pb-1 md:pb-0 text-sm">
+                            {{data_get($navi,'text')}}
+                        </span>
+                    </a>
+                </li>
+               @endif
+
+            @endforeach
 
             </ul>
 
