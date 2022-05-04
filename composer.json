@@ -1,7 +1,7 @@
 {
     "minimum-stability": "dev",
     "name": "laravia/user",
-    "description": "laravia core",
+    "description": "laravia package: user",
     "license": "license",
     "authors": [
         {
