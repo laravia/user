@@ -34,7 +34,7 @@
                                     {{Laravia::trans('user.btnLogin')}}
                                 </a>
                             @endif
-                            @if(Auth::user())<form action="{{route('laravia.user::logout')}}" method="POST">@csrf<button class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">{{Laravia::trans('user.btnLogout')}}</button></form>@endif
+                            @if(Auth::user())<form action="{{route('laravia.user::logoutPost')}}" method="POST">@csrf<button class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">{{Laravia::trans('user.btnLogout')}}</button></form>@endif
                             </li>
 
 
