@@ -4,11 +4,9 @@ namespace Laravia\User\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Laravia\Core\App\Laravia;
 
 class UserController extends Controller
 {
-
 
     public function loginGet()
     {
