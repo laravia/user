@@ -1,4 +1,5 @@
 <?php
+
 namespace Laravia\User\Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -10,15 +11,19 @@ class UserTableSeeder extends Seeder
 {
     public function run()
     {
+        $name = "admin";
+        $email = "code@laravia.art";
         $password = "admin";
 
         DB::table('users')->insert([
-            'name' => 'leunam',
-            'email' => 'code@leunam.art',
+            'name' => $name,
+            'email' => $email,
             'email_verified_at' => \Carbon\Carbon::now(),
             'password' => Hash::make($password),
             'role_id' => 1,
             'uuid' => Laravia::uuid(),
         ]);
+
+        dump('user = ' . $name . ' | password = ' . $password . ' | email = ' . $email);
     }
 }
